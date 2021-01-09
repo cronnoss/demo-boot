@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Component
@@ -33,5 +34,16 @@ public class ProductRepository {
 
     public void save(Product product) {
         products.add(product);
+    }
+
+    public void deleteById(Long id) {
+        Iterator<Product> iter = products.iterator();
+        while (iter.hasNext()) {
+            Product product = iter.next();
+            if (product.getId().equals(id)) {
+                iter.remove();
+                return;
+            }
+        }
     }
 }
