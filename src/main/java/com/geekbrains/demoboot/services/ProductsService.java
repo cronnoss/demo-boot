@@ -28,6 +28,7 @@ public class ProductsService {
         productRepository.save(product);
     }
 
+//    @Secured(value = "ADMIN") //strange - do not work
     public void deleteByID(Long id) {
         productRepository.deleteById(id);
     }
