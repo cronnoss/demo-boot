@@ -17,7 +17,8 @@ public class ItemsService {
     }
 
     public List<Item> getAllItems() {
-        System.out.println(itemRepository.findByTitle("Box"));
+        System.out.println(itemRepository.findByTitle("Tree"));
+        System.out.println(itemRepository.findByCostBetween(30, 70));
         return itemRepository.findAll();
     }
 }
