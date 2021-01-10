@@ -17,6 +17,7 @@ public class ItemsService {
     }
 
     public List<Item> getAllItems() {
+        System.out.println(itemRepository.findByTitle("Box"));
         return itemRepository.findAll();
     }
 }
